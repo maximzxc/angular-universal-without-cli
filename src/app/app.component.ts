@@ -1,7 +1,6 @@
 import {OnInit, Component} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from 'rxjs/Observable';
-const {pipe, publishReplay, refCount} = require('rxjs/operators');
 
 
 @Component({
@@ -30,15 +29,6 @@ export class AppComponent implements OnInit {
 
     getConfig(): Observable<any> {
         return this.http.get(this.serverUrl);
-        /*
-        if (!this._textOnLoad) {
-            this._textOnLoad = this.http.get(serverUrl).pipe(
-                publishReplay(),
-                refCount()
-            )
-        }
-        return this._textOnLoad;
-         */
     }
 
 }
